@@ -1,0 +1,655 @@
+/* ================= VARIABLES & RESETS ================= */
+:root {
+  --primary: #024959;
+  --orange: #F29F05;
+  --gold: #F2B705;
+  --dark-bg: #1E252B;
+  --page-bg: #F8F9FA;
+  --white: #FFFFFF;
+  --card-border: #E2E8F0;
+  --text-muted: #718096;
+  --text-body: #2D3748;
+  --text-dark: #111827;
+  --input-bg: #F9FAFB;
+  --input-border: #D1D5DB;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: var(--page-bg);
+  color: var(--text-body);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.text-center { text-align: center; }
+
+/* ================= HEADER ================= */
+.header {
+  background-color: var(--primary);
+  height: 80px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header-container {
+  max-width: 1040px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--gold);
+  letter-spacing: 2px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-dot {
+  width: 16px;
+  height: 16px;
+  background-color: var(--gold);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 35px;
+  list-style: none;
+}
+
+.nav-menu a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 5px;
+  transition: color 0.2s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  color: var(--gold);
+}
+
+.nav-menu a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--gold);
+}
+
+/* ================= HERO BANNERS ================= */
+.hero-home {
+  margin-top: 30px;
+  margin-bottom: 40px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--dark-bg) 100%);
+  border-radius: 12px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-bar {
+  width: 10px;
+  background-color: var(--orange);
+  flex-shrink: 0;
+}
+
+.hero-home-content {
+  padding: 45px 40px;
+  color: var(--white);
+}
+
+.badge-launch {
+  display: inline-block;
+  background-color: var(--orange);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+}
+
+/* BANNER COM IMAGEM NO HTML */
+.hero-home {
+  margin-top: 30px;
+  margin-bottom: 40px;
+  border-radius: 12px;
+  display: flex;
+  overflow: hidden;
+  position: relative; /* Serve de referência para a imagem e a camada escura */
+  min-height: 280px;
+}
+
+/* Faz a imagem do HTML preencher todo o fundo */
+.hero-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Filtro escuro transparente sobre a imagem */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(2, 73, 89, 0.85), rgba(30, 37, 43, 0.85));
+  z-index: 2;
+}
+
+/* Garante que o texto e a barra fiquem acima da imagem e do filtro */
+.hero-bar {
+  position: relative;
+  z-index: 3;
+  width: 10px;
+  background-color: var(--orange);
+  flex-shrink: 0;
+}
+
+.hero-home-content {
+  position: relative;
+  z-index: 3;
+  padding: 45px 40px;
+  color: var(--white);
+}
+
+/* ================= PAGE TITLES & SECTIONS ================= */
+.page-header {
+  margin: 40px 0 30px;
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: 1px;
+}
+
+.page-subtitle {
+  font-size: 15px;
+  color: #4B5563;
+  margin-top: 5px;
+}
+
+.page-section {
+  margin-bottom: 50px;
+}
+
+.section-card {
+  background-color: var(--white);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 35px 40px;
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 5px;
+}
+
+.title-underline {
+  width: 50px;
+  height: 3px;
+  background-color: var(--orange);
+  border-radius: 1.5px;
+  margin-bottom: 20px;
+}
+
+.section-desc {
+  font-size: 15px;
+  color: var(--text-muted);
+  margin-bottom: 25px;
+}
+
+.text-body {
+  font-size: 14px;
+  color: var(--text-body);
+  line-height: 1.7;
+}
+
+.card-action-right {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+/* ================= GRIDS & CARDS ================= */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.grid-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+}
+
+.card {
+  background-color: var(--white);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.card .card-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.card .btn {
+  margin-top: auto;
+}
+
+/* Ajustes de Imagem dos Produtos */
+.image-placeholder {
+  width: 100%;
+  height: 200px;
+  background-color: #F1F5F9;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 10px;
+}
+
+/* Feature Cards */
+.card-feature {
+  padding: 20px 15px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.card-feature h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.card-feature p {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* Team Cards */
+/* Ajuste da caixa circular do avatar */
+.card-team .avatar {
+  width: 60px;           /* Tamanho do círculo */
+  height: 60px;
+  border-radius: 50%;    /* Garante o formato redondo */
+  overflow: hidden;      /* Corta qualquer sobra da imagem */
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Encaixe perfeito da foto */
+.card-team .avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* Centraliza e enquadra o rosto sem achatar */
+}
+
+.card-team h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--dark-bg);
+  margin-bottom: 3px;
+}
+
+.card-team .role {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--orange);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.card-team p {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ================= BANNER DESTAQUE ================= */
+.banner-highlight {
+  background-color: var(--orange);
+  border-radius: 10px;
+  padding: 25px 20px;
+  text-align: center;
+  color: var(--white);
+  margin-bottom: 40px;
+}
+
+.banner-highlight h2 {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+/* ================= BUTTONS ================= */
+.btn {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: #013440;
+}
+
+.btn-orange {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+.btn-orange:hover {
+  background-color: #d98e04;
+}
+
+.btn-lg {
+  padding: 14px 28px;
+  font-size: 13px;
+}
+
+/* ================= CONTACT PAGE ================= */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.contact-form-card h2,
+.contact-info-card h2 {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 5px;
+}
+
+.form-desc {
+  font-size: 13px;
+  color: #6B7280;
+  margin-bottom: 25px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #374151;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  background-color: var(--input-bg);
+  border: 1.5px solid var(--input-border);
+  border-radius: 6px;
+  padding: 12px 15px;
+  font-size: 13px;
+  color: var(--text-body);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--primary);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #9CA3AF;
+}
+
+.btn-submit {
+  width: 220px;
+  padding: 14px;
+  margin-top: 10px;
+}
+
+/* Contact Info Side */
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin: 25px 0 30px;
+}
+
+.info-item {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.info-icon {
+  width: 36px;
+  height: 36px;
+  background-color: #FEF3C7;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.info-item h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 2px;
+}
+
+.info-item p {
+  font-size: 12px;
+  color: #4B5563;
+}
+
+/* Hours Box */
+.hours-box {
+  background-color: var(--input-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.hours-box h3 {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+.hours-group {
+  margin-bottom: 12px;
+}
+
+.hours-group:last-child {
+  margin-bottom: 0;
+}
+
+.hours-group strong {
+  display: block;
+  font-size: 12px;
+  color: #374151;
+}
+
+.hours-group p {
+  font-size: 12px;
+  color: #6B7280;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  background-color: var(--dark-bg);
+  padding-top: 45px;
+  margin-top: auto;
+}
+
+.footer-container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.footer-col h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 15px;
+}
+
+.footer-col p {
+  font-size: 13px;
+  color: #CBD5E0;
+  margin-bottom: 6px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #2D3748;
+  padding: 25px 0;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ================= RESPONSIVIDADE ================= */
+@media (max-width: 900px) {
+  .grid-5 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-3,
+  .grid-4,
+  .grid-5,
+  .contact-grid,
+  .footer-container,
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-menu {
+    gap: 15px;
+  }
+
+  .btn-submit {
+    width: 100%;
+  }
+
+  .hero-home-content h1 {
+    font-size: 24px;
+  }
+}

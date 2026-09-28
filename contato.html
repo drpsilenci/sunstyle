@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SunStyle - Entre em Contato</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <span class="logo-dot"></span>
+        SUNSTYLE
+      </a>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="index.html#about">QUEM SOMOS</a></li>
+          <li><a href="produtos.html">PRODUTOS</a></li>
+          <li><a href="contato.html" class="active">CONTATO</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="page-header text-center">
+      <h1 class="page-title">ENTRE EM CONTATO</h1>
+      <p class="page-subtitle">Estamos prontos para tirar suas dúvidas e atender seu pedido</p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- FORMULÁRIO -->
+      <section class="card contact-form-card">
+        <h2>Envie uma mensagem</h2>
+        <p class="form-desc">Preencha os campos abaixo e retornaremos em até 24 horas.</p>
+
+        <form action="#" method="POST" class="contact-form">
+          <div class="form-group full-width">
+            <label for="nome">Nome Completo *</label>
+            <input type="text" id="nome" name="nome" placeholder="Ex: João Silva" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">E-mail *</label>
+              <input type="email" id="email" name="email" placeholder="seuemail@dominio.com" required>
+            </div>
+            <div class="form-group">
+              <label for="telefone">Telefone / WhatsApp</label>
+              <input type="tel" id="telefone" name="telefone" placeholder="(19) 99999-9999">
+            </div>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="assunto">Assunto *</label>
+            <select id="assunto" name="assunto" required>
+              <option value="" disabled selected>Selecione o motivo do contato</option>
+              <option value="duvidas">Dúvidas sobre produtos</option>
+              <option value="vendas">Orçamentos e Vendas</option>
+              <option value="suporte">Suporte e Garantia</option>
+              <option value="outros">Outros assuntos</option>
+            </select>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="mensagem">Mensagem *</label>
+            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem aqui..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-submit">ENVIAR MENSAGEM</button>
+        </form>
+      </section>
+
+      <!-- CANAIS DE ATENDIMENTO -->
+      <aside class="card contact-info-card">
+        <h2>Canais de Atendimento</h2>
+
+        <div class="info-list">
+          <div class="info-item">
+            <div class="info-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#D97706"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            </div>
+            <div>
+              <h4>Endereço</h4>
+              <p>Rua Manllttule, 135</p>
+              <p>Campinas - SP</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#D97706"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            </div>
+            <div>
+              <h4>WhatsApp / Telefone</h4>
+              <p>+55 (19) 3335-7999</p>
+              <p>+55 (19) 99999-7997</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#D97706"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </div>
+            <div>
+              <h4>E-mail Direto</h4>
+              <p>contato@sunstyle.com.br</p>
+              <p>suporte@sunstyle.com.br</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hours-box">
+          <h3>HORÁRIO DE ATENDIMENTO</h3>
+          <div class="hours-group">
+            <strong>Segunda a Sexta:</strong>
+            <p>08:00h às 18:00h</p>
+          </div>
+          <div class="hours-group">
+            <strong>Sábados:</strong>
+            <p>09:00h às 13:00h</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>SUNSTYLE INDÚSTRIA DE ÓCULOS LTDA.</h4>
+        <p>Av. das Palmeiras, 1250 – SP</p>
+        <p>Campinas - SP | CEP: 13056-480</p>
+      </div>
+      <div class="footer-col">
+        <h4>ATENDIMENTO</h4>
+        <p>WhatsApp: (19) 99876-4521</p>
+        <p>E-mail: contato@sunstyle.com.br</p>
+      </div>
+      <div class="footer-col">
+        <h4>REDES SOCIAIS</h4>
+        <p>Instagram: @sunstyleoficial</p>
+        <p>Facebook: /sunstyleoficial</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 SunStyle Óculos. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
